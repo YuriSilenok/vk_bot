@@ -14,5 +14,5 @@ class Message:
     def answer(self, text):
         self.bot.send_message(
             chat_id=self.from_id,
-            message=text,
+            text=text,
         )
