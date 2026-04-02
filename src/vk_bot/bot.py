@@ -61,10 +61,9 @@ class Bot:
                 if result is not None:
                     break
 
-    def run(self, app: Optional[FastAPI] = None):
-
+    def run(self, app: Optional[FastAPI] = None, host: str = '127.0.0.1', port: int = 8000, log_level: str = None):
         if app:
-            Thread(target=self._thread_run, daemon=True).start()
-            uvicorn.run(app, host="127.0.0.1", port=8012, log_level="info")
+            Thread(target=self._listen, daemon=True).start()
+            uvicorn.run(app, host=host, port=port, log_level=log_level)
         else:
             self._listen()
