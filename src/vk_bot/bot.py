@@ -55,6 +55,8 @@ class Bot:
 
     def _listen(self):
         for event in self.longpoll.listen():
+            if event.message is None:
+                continue
             message: Message = self._extract_message_data(event)
             for router in self.routers:
                 result = router.process(message)
