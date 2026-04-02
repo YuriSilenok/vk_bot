@@ -23,6 +23,9 @@ class F:
         return self._Field(name)
 
 
+F = F()
+
+
 @dataclass
 class Filter:
     field: str
