@@ -12,7 +12,7 @@ class Message:
         return f"Message(text='{self.text}', from_id={self.from_id})"
 
     def answer(self, text):
-        self.bot.vk.messgaes.send(
+        self.bot.vk.messages.send(
             user_id=self.from_id,
             message=text,
             random_id=0,
