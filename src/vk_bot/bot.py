@@ -28,6 +28,13 @@ class Bot:
         self.longpoll = VkBotLongPoll(self.session, group_id)
         self.vk = self.session.get_api()
 
+    def send_message(self, text: str, chat_id: int):
+        self.vk.messages.send(
+            user_id=chat_id,
+            message=text,
+            random_id=0,
+        )
+
     @classmethod
     def get_instance(cls):
         """Получить экземпляр (если не инициализирован - вернет None)"""
