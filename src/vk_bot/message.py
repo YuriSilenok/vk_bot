@@ -1,8 +1,5 @@
-from . import Bot
-
-
 class Message:
-    def __init__(self, bot: Bot, text: str, from_id: int, peer_id: int, date: int, payload: dict, attachments: list):
+    def __init__(self, bot, text: str, from_id: int, peer_id: int, date: int, payload: dict, attachments: list):
         self.bot = bot
         self.text = text
         self.from_id = from_id
